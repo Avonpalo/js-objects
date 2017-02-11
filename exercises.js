@@ -17,7 +17,17 @@ A literal object.
  
  "My dog `name` is `age` year old likes to `speak`."
  */ 
+var dog = {
+  name: "Spuds",
+  age: 3,
+  vegetarian: false,
+  color: ["black", "white"],
+  speak: function(){
+    return "woof!";
+  }
+}
 
+console.log("My dog " + dog.name + " is " + dog.age + " year's old likes to " + dog.speak() + ".");
 
 /*
 An empty object
