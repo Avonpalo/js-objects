@@ -4,6 +4,7 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
 
 
 /*
+Assignment #1:
 A literal object. 
    Declare a variable named `dog` and create the following properties (key-value pairs) to the object:
    
@@ -30,6 +31,7 @@ var dog = {
 console.log("My dog " + dog.name + " is " + dog.age + " year's old likes to " + dog.speak() + ".");
 
 /*
+Assignment #2:
 An empty object
    Declare a variable named `kicks` and assign it to an EMPTY object.
    Next you will add the following properties to this object. Each property declaration expression will be on its own line and
@@ -42,17 +44,38 @@ An empty object
   Console.log the object.
 */
 
+var kicks = {};
+
+kicks.brand = "New Balance";
+kicks.color =  "red";
+kicks.size = 6.5;
+kicks.buy = function(){
+  return "Hell Yeah!";
+
+}
+
+console.log(kicks);
+console.log(kicks.buy());
+
 
 /* 
+Assignment #3:
    Declare a variable named `plainBox` and set its value to be an EMPTY object.
    Next, you will add three properties to this object. 
             - add a property named `color` and set it the name of any color.
             - add a property named `size` and set it to a number value between `0` and `20`.
             - add a property named `contents` and set it to be an empty array.
 */
+var plainBox = {};
 
+plainBox.color = "teal";
+plainBox.size = 15;
+plainBox.contents = [];
+
+console.log(plainBox);
 
 /*
+Assignment #4:
    Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
             - add a key named `model` and set its value to the name of an American car manufacturer.
             - add a key named `year` and set it to be a value above 2000 but below 2016.
@@ -60,9 +83,18 @@ An empty object
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
 */
+var stockCar = {
+  model: "Ford",
+  year: 2002,
+  automaticTransmission: true,
+  driver: "null",
+  passengers: [],
+}
 
+console.log(stockCar);
 
 /*
+Assignment #5:
    Add new property inside a function
    Declare a variable named `plainPerson`. Set its value to be an EMPTY object with no properties.
 
@@ -77,9 +109,82 @@ An empty object
    the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just 
    the value at `name`, and just the value at `age`.
  */
-
-
 /*
+var plainPerson = {};
+//var completePerson();
+
+function buildPerson(person, nameString, age){
+  this.name = nameString;
+  this.age = age;
+  this.newName = function (name){
+    this.nameString = name;
+  this.newAge = function (age){
+    this.age = age;
+  console.log(person);
+}
+  }
+}
+
+newPerson.newName("Wyllie Coyote");
+newPerson.newAge(57);
+var buildPerson = newPerson("Wyllie Coyote", "WyllieCoyote", 57);
+
+console.log(buildPerson);
+console.log(name);
+console.log(age);
+
+// var myMother = new person("Sally","Rally",48,"green");
+//myMother.changeName("Doe");
+/*
+function person(firstName, lastName, age, eyeColor) {
+    this.firstName = firstName;  
+    this.lastName = lastName;
+    this.age = age;
+    this.eyeColor = eyeColor;
+    this.changeName = function (name) {
+        this.lastName = name;
+    };
+}
+The changeName() function assigns the value of name to the person's lastName property.
+
+Now You Can Try:
+myMother.changeName("Doe");
+Try it Yourself »
+JavaScript knows which person you are talking about by "substituting" this with myMother.
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function person(firstName,lastName,age,eyeColor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.eyeColor = eyeColor;
+    this.changeName = function (name) {
+        this.lastName = name;
+    }
+}
+var myMother = new person("Sally","Rally",48,"green");
+myMother.changeName("Doe");
+document.getElementById("demo").innerHTML =
+"My mother's last name is " + myMother.lastName;
+</script>
+
+</body>
+</html>
+
+My mother's last name is Doe
+
+
+
+//*
+Assignment #6:
    Display values of objects that are inside an array
    Declare a new variable named `arrayOfObjects` and set it to be [this array of objects
    (https://gist.github.com/sgnl/958adf99007329d2e4ff).
@@ -104,8 +209,81 @@ An empty object
             ...
  */
 
+var arrayOfObjects =
+[
+  {
+    id: 0,
+    date: "Monday Jan 25 2015 2:01 PM",
+    total: "279.38"
+  },
+  {
+    id: 1,
+    date: "Monday Jan 27 2015 11:31 AM",
+    total: "79.80"
+  },
+  {
+    id: 2,
+    date: "Monday Feb 1 2015 7:56 AM",
+    total: "15.62"
+  },
+  {
+    id: 3,
+    date: "Monday Feb 1 2015 9:43 AM",
+    total: "19.83"
+  },
+  {
+    id: 4,
+    date: "Monday Feb 1 2015 11:08 PM",
+    total: "56.69"
+  },
+  {
+    id: 5,
+    date: "Monday Feb 13 2015 10:22 AM",
+    total: "137.92"
+  },
+  {
+    id: 6,
+    date: "Monday Feb 14 2015 6:54 PM",
+    total: "938.65"
+  },
+  {
+    id: 7,
+    date: "Monday Feb 14 2015 7:17 PM",
+    total: "43.77"
+  },
+  {
+    id: 8,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "28.54"
+  },
+  {
+    id: 9,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "194.33"
+  }
+];
+
+function printProcessedOrders(orders){
+
+}
+
+/*Declare a new function named `printProcessedOrders`and set one parameter called `orders`. Within this function you 
+   will return a string that prints the order details to the page in the following format.
+
+        Example output:
+            =====
+            id:  0
+            purchase date:  Monday Jan 25 2015 2:01 PM
+            purchase total:  279.38
+            =====
+            id:  1
+            purchase date:  Monday Jan 27 2015 11:31 AM
+            purchase total:  79.80
+            =====
+
 
 /*
+Assignment #7:
    Addition with an object
    Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, and `result`. 
    Properties 'a' and 'b' will be set to a number and result will be 'undefined.'
@@ -120,6 +298,7 @@ An empty object
 
 
 /*
+Assignment #8:
    Print sum function and add as new key-value
    Declare a new function named printObj and a single parameter which will be the object from the challenge just above. 
    Within this function you are to print to the screen a message of the operation performed. For Example:
@@ -138,6 +317,7 @@ An empty object
 
 
 /*
+Assignment #9:
    Putting stuff in `plainBox`
         Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a 
         FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being 
@@ -149,6 +329,7 @@ An empty object
 
 
 /*
+Assignment #10:
    Detecting transmission
         Declare a function named detectingTransmission and a single parameter which will be an object. Within this function 
         you will check to see if the car has an automatic or manual transmission and print the results on screen.
@@ -161,6 +342,7 @@ An empty object
 
 
 /*
+Assignment #11:
    Who's driving this thing?!
         As you may have noticed that the `stockCar` doesn't have a driver!
 
