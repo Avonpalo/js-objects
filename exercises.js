@@ -186,7 +186,7 @@ My mother's last name is Doe
 //*
 Assignment #6:
    Display values of objects that are inside an array
-   Declare a new variable named `arrayOfObjects` and set it to be [this array of objects
+   Declare a new variable named `arrayOfObjects` and set it to be [this array of objects:
    (https://gist.github.com/sgnl/958adf99007329d2e4ff).
 
    Declare a new function named `printProcessedOrders`and set one parameter called `orders`. Within this function you 
@@ -263,10 +263,36 @@ var arrayOfObjects =
   }
 ];
 
-function printProcessedOrders(orders){
 
+/*function printProcessedOrders(orders){ */
+
+  for (var i = 0; i < arrayOfObjects.length; i++){
+  console.log("=====");
+  console.log(arrayOfObjects[i]);
+  }
+
+/* }
+*/
+
+/*
+var cars = [
+{type:"Volvo", year:2016},
+{type:"Saab", year:2001},
+{type:"BMW", year:2010}]
+
+displayCars();
+function myFunction() {
+    cars.sort(function(a, b){return a.year - b.year});
+    displayCars();
 }
 
+function displayCars() {
+  document.getElementById("demo").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+</script>
 /*Declare a new function named `printProcessedOrders`and set one parameter called `orders`. Within this function you 
    will return a string that prints the order details to the page in the following format.
 
