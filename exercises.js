@@ -271,8 +271,19 @@ var arrayOfObjects =
   console.log(arrayOfObjects[i]);
   }
 
+var orders = [{x, y, z}];
+console.log("=====");
+console.log(arrayOfObjects[i]) + "id: " + x +
+console.log(arrayOfObjects[i]) + "purchase date: " + y +
+console.log(arrayOfObjects[i]) + "purchase total: " + z;
+var x = "";
+var y = "";
+var z = "";
+
 /* }
 */
+
+/* displayOrders();
 
 /*
 var cars = [
@@ -292,20 +303,6 @@ function displayCars() {
   cars[1].type + " " + cars[1].year + "<br>" +
   cars[2].type + " " + cars[2].year;
 }
-</script>
-/*Declare a new function named `printProcessedOrders`and set one parameter called `orders`. Within this function you 
-   will return a string that prints the order details to the page in the following format.
-
-        Example output:
-            =====
-            id:  0
-            purchase date:  Monday Jan 25 2015 2:01 PM
-            purchase total:  279.38
-            =====
-            id:  1
-            purchase date:  Monday Jan 27 2015 11:31 AM
-            purchase total:  79.80
-            =====
 
 
 /*
@@ -321,6 +318,17 @@ Assignment #7:
         Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` 
         to inspect your results.
 */
+/*
+var sumObj = {
+  a: 5,
+  b: 3,
+  result: undefined
+}
+var sumObjResult = sumObj.result;
+function objectAddition{
+  return sumObj.result = a + b;
+  console.log(sumObjResult);
+}
 
 
 /*
@@ -341,7 +349,10 @@ Assignment #8:
         **create more** objects and invoke your function multiple times.
  */
 
+/*
+function printObj(){
 
+}
 /*
 Assignment #9:
    Putting stuff in `plainBox`
@@ -354,6 +365,18 @@ Assignment #9:
  */
 
 
+var sum =0;
+var list = new Array(10);
+
+
+  for (var i=0; i < 10; i++) 
+  {
+    list[i] = Math.floor(Math.random() * 51);  // 0 to 50
+    sum += list[i];
+  }
+
+console.log(sum);
+
 /*
 Assignment #10:
    Detecting transmission
@@ -365,6 +388,21 @@ Assignment #10:
 
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
+/*
+
+var isAutomaticTransmission = {};
+var stockCar = {
+  carCheck: "automatic",
+}
+
+function detectingTransmission(stockCar) {
+  if stockCar.carCheck = "automatic"{
+    console.log("Your car has an automatic transmission."){
+} else{ 
+  console.log("Your car has a manual transmission");
+  }
+  } 
+}
 
 
 /*
@@ -372,7 +410,7 @@ Assignment #11:
    Who's driving this thing?!
         As you may have noticed that the `stockCar` doesn't have a driver!
 
-        Declare a function named addDriver with two parameters. The first parameter will be an object with represents a 
+        Declare a function named addDriver with two parameters. The first parameter will be an object which represents a 
         **car**, the other will be a **person**. Within this function, set the `driver` value of the **stockCar** to the 
         second parameter being passed into your function.
 
@@ -380,6 +418,19 @@ Assignment #11:
         your results. Consider using `plainPerson` as your driver.
  */
 
+/*
+var stockCarWithDriver = {};
+var addDriver = {
+  car: "Dodge",
+  person: "Dale Earnhardt, Jr.";
+}
+
+function addDriver(){
+  var plainPerson = addDriver.person;
+
+}
+
+console.log(stockCarWithDriver);
 
 /*
     #Final Boss
@@ -413,3 +464,19 @@ Assignment #11:
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+
+var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+
+/*
+function addPassengers(car, [], []){
+  console.log(**car**);
+}
+
+*/
+
+/* function displayPassengers(car){ */
+  for (var i = 0; i < passengerList.length; i++)
+  console.log(passengerList[i] + ", " + "age " + passengerAges[i] + ", is riding dirty!");
+
+/* } */
