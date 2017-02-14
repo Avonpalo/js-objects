@@ -109,29 +109,19 @@ Assignment #5:
    the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just 
    the value at `name`, and just the value at `age`.
  */
-/*
+
+
 var plainPerson = {};
-//var completePerson();
 
 function buildPerson(person, nameString, age){
-  this.name = nameString;
-  this.age = age;
-  this.newName = function (name){
-    this.nameString = name;
-  this.newAge = function (age){
-    this.age = age;
-  console.log(person);
-}
-  }
+  person.name = nameString;
+  person.age = age;
+  return person;
+
 }
 
-newPerson.newName("Wyllie Coyote");
-newPerson.newAge(57);
-var buildPerson = newPerson("Wyllie Coyote", "WyllieCoyote", 57);
-
-console.log(buildPerson);
-console.log(name);
-console.log(age);
+var completePerson = (buildPerson(plainPerson, "Ann Yamauchi", 35));
+console.log(completePerson);
 
 // var myMother = new person("Sally","Rally",48,"green");
 //myMother.changeName("Doe");
@@ -264,23 +254,22 @@ var arrayOfObjects =
 ];
 
 
-/*function printProcessedOrders(orders){ */
+function printProcessedOrders(orders){ 
 
   for (var i = 0; i < arrayOfObjects.length; i++){
   console.log("=====");
-  console.log(arrayOfObjects[i]);
-  }
+  console.log("id: " + arrayOfObjects[i].id);
+  console.log("purchase date: " + arrayOfObjects[i].date);
+  console.log("purchase total: " + arrayOfObjects[i].total);
+  console.log("=====");  
+    }
 
-var orders = [{x, y, z}];
-console.log("=====");
-console.log(arrayOfObjects[i]) + "id: " + x +
-console.log(arrayOfObjects[i]) + "purchase date: " + y +
-console.log(arrayOfObjects[i]) + "purchase total: " + z;
-var x = "";
-var y = "";
-var z = "";
 
 /* }
+*/
+
+/*
+"\n"; <-- should do a carriage return.
 */
 
 /* displayOrders();
@@ -326,7 +315,7 @@ var sumObj = {
 }
 var sumObjResult = sumObj.result;
 function objectAddition{
-  return sumObj.result = a + b;
+  return sumObj.result = sum(a + b);
   console.log(sumObjResult);
 }
 
@@ -367,7 +356,6 @@ Assignment #9:
 
 var sum =0;
 var list = new Array(10);
-
 
   for (var i=0; i < 10; i++) 
   {
@@ -479,4 +467,6 @@ function addPassengers(car, [], []){
   for (var i = 0; i < passengerList.length; i++)
   console.log(passengerList[i] + ", " + "age " + passengerAges[i] + ", is riding dirty!");
 
-/* } */
+/* }
+
+*/
