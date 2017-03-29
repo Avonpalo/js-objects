@@ -19,16 +19,29 @@ A literal object.
  "My dog `name` is `age` year old likes to `speak`."
  */ 
 var dog = {
-  name: "Spuds",
+  name: "Kaipo",
+  age: 4,
+  vegetarian: false,
+  color: ["tan", "gold"],
+  speak: function(){
+    return "woof!";
+  }
+};
+
+console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to " + dog.speak() + ".");
+
+/*
+var dog = {
+  name: "Spuds McKenzie",
   age: 3,
   vegetarian: false,
   color: ["black", "white"],
   speak: function(){
     return "woof!";
   }
-}
+};
 
-console.log("My dog " + dog.name + " is " + dog.age + " year's old likes to " + dog.speak() + ".");
+console.log("My dog " + dog.name + " is " + dog.age + " year's old & likes to " + dog.speak() + ".");
 
 /*
 Assignment #2:
@@ -47,12 +60,25 @@ An empty object
 var kicks = {};
 
 kicks.brand = "New Balance";
+kicks.color = "red";
+kicks.size = 6.5;
+kicks.buy = function(){
+  return "Hell Yeah!";
+};
+
+console.log(kicks);
+console.log(kicks.buy());
+
+/*
+var kicks = {};
+
+kicks.brand = "New Balance";
 kicks.color =  "red";
 kicks.size = 6.5;
 kicks.buy = function(){
   return "Hell Yeah!";
 
-}
+};
 
 console.log(kicks);
 console.log(kicks.buy());
@@ -66,13 +92,22 @@ Assignment #3:
             - add a property named `size` and set it to a number value between `0` and `20`.
             - add a property named `contents` and set it to be an empty array.
 */
+
+var plainBox = {};
+
+plainBox.color = "violet";
+plainBox.size = 11;
+plainBox.contents = [];
+
+console.log(plainBox);
+
+/*
 var plainBox = {};
 
 plainBox.color = "teal";
 plainBox.size = 15;
 plainBox.contents = [];
 
-console.log(plainBox);
 
 /*
 Assignment #4:
@@ -83,13 +118,25 @@ Assignment #4:
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
 */
+
+var stockCar = {
+  model: "Ford",
+  year: 2006,
+  automaticTransmission: true,
+  driver: null,
+  passengers: [],
+};
+
+console.log(stockCar);
+
+/*
 var stockCar = {
   model: "Ford",
   year: 2002,
   automaticTransmission: true,
   driver: "null",
   passengers: [],
-}
+};
 
 console.log(stockCar);
 
@@ -110,7 +157,22 @@ Assignment #5:
    the value at `name`, and just the value at `age`.
  */
 
+var plainPerson = {};
 
+function buildPerson(person, nameString, age){
+  person.name = nameString;
+  person.age = age;
+
+return person;
+}
+
+var completePerson = (buildPerson(plainPerson, "Ann Yamauchi", 33));
+
+console.log(completePerson);
+console.log(completePerson.name);
+console.log(completePerson.age);
+
+/*
 var plainPerson = {};
 
 function buildPerson(person, nameString, age){
@@ -122,62 +184,15 @@ function buildPerson(person, nameString, age){
 
 var completePerson = (buildPerson(plainPerson, "Ann Yamauchi", 35));
 console.log(completePerson);
+console.log(completePerson.name);
+console.log(completePerson.age);
 
-// var myMother = new person("Sally","Rally",48,"green");
-//myMother.changeName("Doe");
+
 /*
-function person(firstName, lastName, age, eyeColor) {
-    this.firstName = firstName;  
-    this.lastName = lastName;
-    this.age = age;
-    this.eyeColor = eyeColor;
-    this.changeName = function (name) {
-        this.lastName = name;
-    };
-}
-The changeName() function assigns the value of name to the person's lastName property.
-
-Now You Can Try:
-myMother.changeName("Doe");
-Try it Yourself »
-JavaScript knows which person you are talking about by "substituting" this with myMother.
-
-
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<p id="demo"></p>
-
-<script>
-function person(firstName,lastName,age,eyeColor) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.eyeColor = eyeColor;
-    this.changeName = function (name) {
-        this.lastName = name;
-    }
-}
-var myMother = new person("Sally","Rally",48,"green");
-myMother.changeName("Doe");
-document.getElementById("demo").innerHTML =
-"My mother's last name is " + myMother.lastName;
-</script>
-
-</body>
-</html>
-
-My mother's last name is Doe
-
-
-
-//*
 Assignment #6:
    Display values of objects that are inside an array
    Declare a new variable named `arrayOfObjects` and set it to be [this array of objects:
-   (https://gist.github.com/sgnl/958adf99007329d2e4ff).
+   (https://gist.github.com/sgnl/958adf99007329d2e4ff)].
 
    Declare a new function named `printProcessedOrders`and set one parameter called `orders`. Within this function you 
    will return a string that prints the order details to the page in the following format.
@@ -197,7 +212,8 @@ Assignment #6:
             purchase total:  15.62
             =====
             ...
- */
+ 
+**/
 
 var arrayOfObjects =
 [
@@ -254,45 +270,47 @@ var arrayOfObjects =
 ];
 
 
-function printProcessedOrders(orders){ 
+function printProcessedOrders(orders){
+  for (var i=0; i < arrayOfObjects.length; i++){
+  
+  console.log("=====");
+  console.log("id: " + arrayOfObjects[i].id);
+  console.log("purchase date: " + arrayOfObjects[i].date);
+  console.log("purchase total: " + arrayOfObjects[i].total);  
+  }
+}
 
+console.log(printProcessedOrders(arrayOfObjects));
+
+
+/*
+function printProcessedOrders(orders){ */
+/*
   for (var i = 0; i < arrayOfObjects.length; i++){
   console.log("=====");
   console.log("id: " + arrayOfObjects[i].id);
   console.log("purchase date: " + arrayOfObjects[i].date);
-  console.log("purchase total: " + arrayOfObjects[i].total);
-  console.log("=====");  
+  console.log("purchase total: " + arrayOfObjects[i].total);  
     }
+ /* }  
+
+var totalArray = (printProcessedOrders(orders));
+var totalArray = arrayOfObjects;
 
 
-/* }
-*/
+function printProcessedOrders(orders){
+  order.id = id;
+  order.date = date;
+  order.total = total;
+  return orders;
+}
+
+
+
 
 /*
 "\n"; <-- should do a carriage return.
 */
-
-/* displayOrders();
-
-/*
-var cars = [
-{type:"Volvo", year:2016},
-{type:"Saab", year:2001},
-{type:"BMW", year:2010}]
-
-displayCars();
-function myFunction() {
-    cars.sort(function(a, b){return a.year - b.year});
-    displayCars();
-}
-
-function displayCars() {
-  document.getElementById("demo").innerHTML =
-  cars[0].type + " " + cars[0].year + "<br>" +
-  cars[1].type + " " + cars[1].year + "<br>" +
-  cars[2].type + " " + cars[2].year;
-}
-
 
 /*
 Assignment #7:
@@ -307,15 +325,31 @@ Assignment #7:
         Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` 
         to inspect your results.
 */
+
+var sumObj = {
+  a: 3,
+  b: 2,
+  result: undefined
+};
+
+function objectAddition(object){
+  sumObj.result = sumObj.a + sumObj.b;
+  return object;
+}
+
+var sumObjResult = objectAddition(sumObj);
+console.log(sumObjResult);
+
 /*
 var sumObj = {
   a: 5,
   b: 3,
   result: undefined
 }
+
 var sumObjResult = sumObj.result;
 function objectAddition{
-  return sumObj.result = sum(a + b);
+  return sumObj.result = a + b;
   console.log(sumObjResult);
 }
 
@@ -339,6 +373,26 @@ Assignment #8:
  */
 
 /*
+var sumObj = {
+  a: 3,
+  b: 2,
+  result: undefined
+};
+
+function objectAddition(object){
+  sumObj.result = sumObj.a + sumObj.b;
+  return object;
+}
+
+function printObj(object){
+  output = sumObj.a + " + " + sumObj.b + " = " + object.result;
+  return output;
+}
+
+var sumOjbOutput = printObj(sumObj);
+console.log(printObj(output));
+
+/*
 function printObj(){
 
 }
@@ -353,7 +407,40 @@ Assignment #9:
         plainBoxResult and use `console.log` to inspect your results.
  */
 
+function putInPlainBox(obj){
+  for (var i = 0; i < 10; i++){
+    obj.contents[i] = Math.floor(Math.random() * 10);
+  }
+return obj;
+}
 
+var plainBoxResult = putInPlainBox(plainBox);
+console.log(putInPlainBox(plainBoxResult));
+
+/*
+function putInPlainBox(obj){
+  obj.contents = [];
+  for (var i = 0; i < 10; i++){
+    obj.contents[i] = Math.floor(Math.random() * 10);
+  }
+  return obj;
+}
+
+putInPlainBox(plainBox);
+console.log(plainBox);
+
+/* Another way to do Assignment #9, by James:
+
+function putInPlainBox(obj){
+  for(var i = 0; i < 10; i++){
+  obj.contents.push(Math.floor(Math.random() * 10));
+  }
+return obj;
+}
+var putInPlainBoxResult = putInPlainBox(plainBox);
+console.log(putInPlainBoxResult);
+
+/**
 var sum =0;
 var list = new Array(10);
 
@@ -364,7 +451,7 @@ var list = new Array(10);
   }
 
 console.log(sum);
-
+*/
 /*
 Assignment #10:
    Detecting transmission
@@ -376,6 +463,18 @@ Assignment #10:
 
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
+
+function detectingTransmission(obj){
+  if (obj === true){
+    return "Your car has an automatic transmission.";
+  }else{
+    return "Your car has a manual transmission";
+  }
+}
+
+var isAutomaticTransmission = detectingTransmission(true);
+console.log(isAutomaticTransmission);
+
 /*
 
 var isAutomaticTransmission = {};
@@ -405,6 +504,14 @@ Assignment #11:
         Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect 
         your results. Consider using `plainPerson` as your driver.
  */
+
+/*
+function addDriver(car, person){
+  var plainPersonDriver = person;
+}
+
+var stockCarWithDriver = addDriver("Camaro ZL1", "Dale Earnhardt, Jr.");
+console.log(stockCarWithDriver);
 
 /*
 var stockCarWithDriver = {};
@@ -456,17 +563,20 @@ console.log(stockCarWithDriver);
 var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
 var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
 
+function addPassengers(car, names, ages){
+  for (var i=0; i < names.length; i++){
+    
+  }
+  return car;
+}
 /*
 function addPassengers(car, [], []){
   console.log(**car**);
 }
 
 */
-
-/* function displayPassengers(car){ */
+/*
+function displayPassengers(car){} */
   for (var i = 0; i < passengerList.length; i++)
   console.log(passengerList[i] + ", " + "age " + passengerAges[i] + ", is riding dirty!");
 
-/* }
-
-*/
